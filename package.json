@@ -1,0 +1,27 @@
+{
+  "name": "react-modal-manager",
+  "version": "1.0.0",
+  "description": "Manage react modals with async functions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node node_modules/webpack-dev-server/bin/webpack-dev-server  --config \"./test/webpack.config.js\"",
+    "prepare": "tsc"
+  },
+  "author": "Rafael Salguero Iturrios <rafaelsalgueroiturrios@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.7",
+    "@types/react-dom": "^15.5.5",
+    "awesome-typescript-loader": "^3.2.3",
+    "html-webpack-plugin": "^2.30.1",
+    "react-dom": "^16.0.0",
+    "typescript": "^2.5.3",
+    "webpack": "^2.7.0",
+    "webpack-dev-server": "^2.9.1"
+  }
+}

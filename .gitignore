@@ -1,0 +1,12 @@
+#packages:
+node_modules/*
+
+#build result:
+debug.log
+src/**/*.js
+src/**/*.js.map
+dist/**
+#archivos comprimidos
+*.7z
+*.zip
+*.d.ts

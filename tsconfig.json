@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "noImplicitAny": false,
+        "sourceMap": true,
+        "strictNullChecks": true,
+        "jsx": "react",
+        "rootDir": "src",
+        "outDir": "dist",
+        "lib": [ "es2015", "dom" ],
+        "downlevelIteration": true,
+        "declaration": true,
+        "noImplicitThis": true
+    },
+    "exclude": [
+        "dist",
+        "node_modules",
+        "test"
+    ]
+}
