@@ -1,6 +1,6 @@
 {
   "name": "react-modal-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Manage react modals with async functions",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
