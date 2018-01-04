@@ -1,13 +1,16 @@
 import * as React from "react";
+import { change } from "keautils";
+
+/**Props for a component compatible with the react-modal-manager */
 export interface ModalProps<TValue = any, TResult = any, TParams = any> {
-    /**Parametros que se le pasan al modal y que el modal no puede modificar */
+    /**Read only parameters to the modal*/
     params: TParams;
-    /**Valor que almacena el modal y que el modal puede modificar */
+    /**Modal value tracked internally by the modal manager*/
     value: TValue;
-    /**Indica un cambio en el value */
-    onChange: (value: TValue) => void;
-    /**Se ejecuta al cerrar el modal */
-    onClose: (response: TResult) => void;
+    /**Indicates a value change */
+    onChange: change.OnChangeFunction<TValue>;
+    /**Indicates a modal result*/
+    onClose: (result: TResult) => void;
 }
 
 

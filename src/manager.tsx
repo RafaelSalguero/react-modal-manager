@@ -1,6 +1,7 @@
 import * as React from "react";
 import { splitPromise } from "./async"
 import { ModalManagerState, ModalManagerComponent, ModalProps, ModalEntry } from "./component";
+import { change } from "keautils";
 
 export interface ModalResult<TValue = any, TResult = any> {
     value: TValue;
@@ -75,10 +76,12 @@ export class ModalManager extends React.PureComponent<{}, ModalManagerState> {
     }
 
     /**Recibe el cambio del valor de un modal */
-    private handleOnChange = (id: number) => (value: any) => {
+    private handleOnChange = (id: number) => async (value: change.OnChangeArgument<any>) => {
+        const nextFunc = change.toChangeArgumentFunction(value);
         const oldList = this.state.modals;
-        const newList = oldList.map(x => x.id == id ? { ...x, props: { ...x.props, value: value } } : x);
-        this.setState({ modals: newList });
+        const newList = oldList.map(x => x.id == id ? { ...x, props: { ...x.props, value: nextFunc(x.props.value) } } : x);
+
+        await new Promise(resolve => this.setState({ modals: newList }, resolve));
     }
 
     render() {

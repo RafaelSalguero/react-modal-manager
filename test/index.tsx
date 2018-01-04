@@ -7,7 +7,7 @@ export class App extends React.PureComponent {
     private modalManager = createModalManager();
 
     private onShowModal = async () => {
-        const modal = await this.modalManager.showModal(MyModal, { title: "My modal title" }, { text: "rafa" });
+        const modal = await this.modalManager.showModal(MyModal, { title: "My modal title" }, { text: "rafa",otroValue: "hola" });
         if(modal.result) {
             alert("value: "  + modal.value.text);
         } else {

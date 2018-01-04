@@ -6,13 +6,12 @@ export interface Params {
 
 export interface Value {
     text: string;
+    otroValue: string;
 }
 
 export class MyModal extends React.PureComponent<ModalProps<Value, boolean, Params>>  {
     private handleOnChange = (x: React.ChangeEvent<HTMLInputElement>) => {
-        const old = this.props.value;
-        const next = { ...old, text: x.target.value };
-        this.props.onChange(next);
+        this.props.onChange(old =>  ({ ... old, text: x.target.value }) );
     }
 
     render() {
@@ -25,6 +24,9 @@ export class MyModal extends React.PureComponent<ModalProps<Value, boolean, Para
                 <div>
                     <label>Text:</label>
                     <input value={this.props.value.text} onChange={this.handleOnChange} />
+
+                    <label>OtroValue:</label>
+                    <input value={this.props.value.otroValue} />
                 </div>
 
                 <div>
